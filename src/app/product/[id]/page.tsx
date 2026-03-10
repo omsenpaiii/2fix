@@ -24,11 +24,14 @@ export default function ProductDetailPage({
 
   const handleAddToCart = () => {
     addItem({
-      id: product.id,
+      id: `${product.id}-${personalization}`,
+      productId: product.id,
       name: product.name,
       price: product.price,
       quantity,
-      personalization,
+      personalization: {
+        text: personalization
+      },
       image: product.image,
     });
     alert(`Added ${quantity}x ${product.name} to your cart.`);
