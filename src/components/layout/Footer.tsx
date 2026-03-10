@@ -15,7 +15,7 @@ export function Footer() {
             />
           </div>
           <p className="text-sm leading-loose text-white/60">
-            Personalised Giftware's &copy; {new Date().getFullYear()} <br />
+            Personalised Giftware&apos;s &copy; {new Date().getFullYear()} <br />
             2Fix - Your Trusted Fix, Every Time. <br/>
             Based in Australia.
           </p>
