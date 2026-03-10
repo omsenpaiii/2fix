@@ -15,7 +15,7 @@ export function Navbar() {
     setMounted(true);
   }, []);
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-brand-black/70 backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">

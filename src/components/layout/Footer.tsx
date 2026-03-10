@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="border-t bg-brand-black text-white/80 py-12 md:py-16">
+    <footer className="border-t border-white/10 bg-brand-black/90 text-white/80 py-12 md:py-16 backdrop-blur-md">
       <div className="container flex flex-col items-center justify-between gap-8 md:flex-row max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
-          <div className="relative h-16 w-40 bg-white rounded-lg p-2">
+          <div className="relative h-16 w-40 bg-white/5 backdrop-blur-md rounded-xl p-2 border border-white/10 hover:border-brand-orange transition-colors cursor-pointer">
             <Image 
               src="/logo.png" 
               alt="2Fix Logo" 
