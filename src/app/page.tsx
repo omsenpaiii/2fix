@@ -2,123 +2,195 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PRODUCTS } from "@/lib/products";
+import { Facebook, Instagram, Twitter, MoveRight } from "lucide-react";
 
 // Function to get the first 4 products for showcase
 const featuredProducts = PRODUCTS.slice(0, 4);
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-brand-black text-white selection:bg-brand-orange selection:text-white">
-      {/* Gen-Z Stylized Hero Section */}
-      <section className="relative w-full py-32 md:py-48 overflow-hidden group">
-        {/* Background Image that we generated */}
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/hero_bg.png" 
-            alt="Space Aesthetic Background" 
-            fill 
-            className="object-cover opacity-60 mix-blend-screen scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-black/40 via-transparent to-brand-black z-10" />
-        </div>
+    <div className="flex flex-col min-h-screen bg-white text-brand-black selection:bg-brand-orange selection:text-white">
+      {/* Hero Section: Huge Text and Overlapping Images */}
+      <section className="relative w-full min-h-[90vh] overflow-hidden bg-white flex items-center justify-center pt-20">
         
-        <div className="container relative z-20 flex flex-col items-center text-center space-y-10 max-w-5xl mx-auto px-6 mt-12">
-          {/* Glowing Badge */}
-          <div className="inline-flex items-center rounded-full px-6 py-2 text-sm font-semibold tracking-wide border border-white/20 bg-white/5 backdrop-blur-md shadow-[0_0_20px_rgba(255,133,27,0.4)] text-brand-orange">
-            <span className="mr-2 inline-block h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
-            New Premium Gifts Available
+        {/* Decorative absolute images serving as the "models/stickers" */}
+        {featuredProducts[0] && (
+          <div className="absolute top-20 left-[5%] md:left-[10%] w-48 h-64 md:w-64 md:h-80 rotate-[-8deg] z-10 transition-transform hover:scale-105 hover:rotate-0 duration-500">
+            <Image 
+              src={featuredProducts[0].image} 
+              alt={featuredProducts[0].name} 
+              fill 
+              className="object-cover rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border-[6px] border-white"
+            />
           </div>
+        )}
+        
+        {featuredProducts[1] && (
+          <div className="absolute bottom-10 left-[20%] md:left-[30%] w-40 h-56 md:w-56 md:h-72 rotate-[12deg] z-30 transition-transform hover:scale-105 hover:rotate-0 duration-500">
+            <Image 
+              src={featuredProducts[1].image} 
+              alt={featuredProducts[1].name} 
+              fill 
+              className="object-cover rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border-[6px] border-white"
+            />
+          </div>
+        )}
 
-          <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] uppercase">
-            Your Trusted <span className="text-brand-orange drop-shadow-[0_0_20px_rgba(255,133,27,0.8)]">Fix</span><br />
-            Every Time.
-          </h1>
-          <p className="text-xl md:text-2xl text-white/80 max-w-2xl font-light tracking-wide leading-relaxed">
-            Crafting memorable, tailor-made gifts in Australia. High-end personalization that cuts through the noise.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 pt-8 w-full sm:w-auto">
-            <Link href="/shop" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full bg-brand-orange hover:bg-[#ff9c45] text-white font-black px-12 h-16 rounded-[2rem] text-xl transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(255,133,27,0.6)] border-2 border-brand-orange">
-                Shop The Drop &rarr;
-              </Button>
-            </Link>
-            <Link href="/shop?category=corporate" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full bg-white/5 hover:bg-white/10 text-white font-bold px-12 h-16 rounded-[2rem] text-xl backdrop-blur-md border-2 border-white/20 transition-all hover:scale-105">
-                Corporate Ed.
-              </Button>
-            </Link>
+        {featuredProducts[2] && (
+          <div className="absolute top-32 right-[20%] md:right-[25%] w-52 h-64 md:w-72 md:h-96 rotate-[5deg] z-10 transition-transform hover:scale-105 hover:rotate-0 duration-500">
+            <Image 
+              src={featuredProducts[2].image} 
+              alt={featuredProducts[2].name} 
+              fill 
+              className="object-cover rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border-[6px] border-white"
+            />
           </div>
+        )}
+
+        {featuredProducts[3] && (
+          <div className="absolute bottom-20 right-[5%] md:right-[10%] w-44 h-56 md:w-60 md:h-80 rotate-[-15deg] z-30 transition-transform hover:scale-105 hover:rotate-0 duration-500">
+            <Image 
+              src={featuredProducts[3].image} 
+              alt={featuredProducts[3].name} 
+              fill 
+              className="object-cover rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border-[6px] border-white"
+            />
+          </div>
+        )}
+
+        {/* Giant intersecting text */}
+        <div className="relative z-20 w-full px-4 text-center pointer-events-none">
+          <h1 
+            className="text-[15rem] md:text-[25rem] lg:text-[35rem] font-black leading-none tracking-tighter text-brand-orange mix-blend-multiply opacity-90"
+            style={{ fontFamily: "Impact, sans-serif" }}
+          >
+            2FIX
+          </h1>
         </div>
       </section>
 
-      {/* Featured Products - Glassmorphism Gen Z Vibes */}
-      <section className="py-32 relative">
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-brand-orange/20 rounded-full blur-[120px] -z-10 mix-blend-screen mix-blend-lighten pointer-events-none" />
-        <div className="absolute top-0 right-0 w-80 h-80 bg-brand-orange/10 rounded-full blur-[100px] -z-10 mix-blend-screen mix-blend-lighten pointer-events-none" />
-        
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-2 drop-shadow-lg">
-                Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-red-500">Gifts</span>
-              </h2>
-              <p className="text-xl text-white/60">Handpicked personalized items that break the mold.</p>
-            </div>
-            <Link href="/shop" className="text-brand-orange font-bold text-xl hover:text-white transition-colors uppercase tracking-widest flex items-center gap-2">
-              View All <span>&rarr;</span>
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Featured Products - Clean Grid */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6 max-w-[1400px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
             {featuredProducts.map((product) => (
-              <Link href={`/product/${product.id}`} key={product.id} className="group flex flex-col h-full bg-white/[0.03] hover:bg-white/10 border border-white/10 rounded-[2.5rem] p-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,133,27,0.15)] backdrop-blur-xl">
-                <div className="relative aspect-square overflow-hidden rounded-[2rem] bg-black/50 mb-6">
+              <Link href={`/product/${product.id}`} key={product.id} className="group flex flex-col items-center text-center">
+                <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#F5F5F5] mb-6">
                   <Image 
                     src={product.image} 
                     alt={product.name} 
                     fill 
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 25vw"
                   />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
                 </div>
-                <div className="flex-1 flex flex-col justify-between px-2">
-                  <div>
-                    <span className="text-xs font-bold tracking-widest text-brand-orange uppercase mb-2 block">
-                      {product.category}
-                    </span>
-                    <h3 className="font-bold text-xl leading-tight mb-2 group-hover:text-brand-orange transition-colors">
-                      {product.name}
-                    </h3>
-                  </div>
-                  <div className="flex items-center justify-between mt-6">
-                    <p className="text-2xl font-black">${product.price.toFixed(2)}</p>
-                    <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-brand-orange group-hover:text-black transition-colors">
-                      <span className="font-bold text-xl">+</span>
-                    </div>
-                  </div>
-                </div>
+                
+                <h3 className="font-bold text-lg leading-tight mb-2 text-brand-black group-hover:text-brand-orange transition-colors">
+                  {product.name}
+                </h3>
+                <p className="text-xl font-normal text-brand-black">${product.price.toFixed(2)}</p>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-20 flex justify-center">
+             <Link href="/shop">
+              <Button size="lg" className="bg-brand-black hover:bg-brand-orange text-white rounded-none px-12 py-8 text-lg uppercase tracking-widest font-bold transition-all">
+                Shop All Collection
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* About 2Fix - Minimalist Marquee Style/Big Text Section */}
-      <section className="py-32 relative overflow-hidden bg-white text-brand-black rounded-t-[4rem]">
-        <div className="container mx-auto px-6 max-w-5xl text-center space-y-12">
-          <div className="mx-auto w-24 h-2 bg-brand-orange rounded-full mb-12"></div>
-          <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none">
-            Why 2Fix? <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-[#ff5000]">We Never Miss.</span>
-          </h2>
-          <p className="text-2xl md:text-4xl font-medium leading-normal text-muted-foreground/80 max-w-4xl mx-auto">
-            Based in Australia. Elevating the art of gifting with high-voltage customization, deep laser engraving, and extreme attention to detail. 
-          </p>
+      {/* Footer Section - Minimalist Wix Style */}
+      <footer className="bg-[#F6F5F3] pt-20 pb-12 border-t border-gray-200">
+        <div className="container mx-auto px-6 max-w-[1400px]">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-20">
+            {/* Logo area */}
+            <div className="md:col-span-3">
+              <h2 className="text-5xl font-black tracking-tighter text-[#3e2723] mb-2 leading-none" style={{ fontFamily: "Impact, sans-serif" }}>
+                2Fix
+              </h2>
+              <p className="text-base font-medium text-[#5d4037]">Your Trusted Fix<br/>Every Time.</p>
+            </div>
+
+            {/* Links Columns */}
+            <div className="md:col-span-2 space-y-4">
+              <h4 className="text-2xl font-normal text-[#3e2723] mb-6">Store Policy</h4>
+              <ul className="space-y-3 text-sm font-medium text-[#5d4037]">
+                <li><Link href="#" className="hover:underline underline-offset-4">Shipping Policy</Link></li>
+                <li><Link href="#" className="hover:underline underline-offset-4">Refund Policy</Link></li>
+                <li><Link href="#" className="hover:underline underline-offset-4">Terms & Conditions</Link></li>
+                <li><Link href="#" className="hover:underline underline-offset-4">FAQ</Link></li>
+              </ul>
+            </div>
+
+            <div className="md:col-span-2 space-y-4">
+              <h4 className="text-2xl font-normal text-[#3e2723] mb-6">Legal</h4>
+              <ul className="space-y-3 text-sm font-medium text-[#5d4037]">
+                <li><Link href="#" className="hover:underline underline-offset-4">Privacy Policy</Link></li>
+                <li><Link href="#" className="hover:underline underline-offset-4">Accessibility Statement</Link></li>
+              </ul>
+            </div>
+
+            <div className="md:col-span-2 space-y-4">
+              <h4 className="text-2xl font-normal text-[#3e2723] mb-6">Contact</h4>
+              <ul className="space-y-3 text-sm font-medium text-[#5d4037]">
+                <li>123-456-7890</li>
+                <li><a href="mailto:info@2fix.com" className="hover:underline underline-offset-4">info@2fix.com</a></li>
+              </ul>
+            </div>
+
+            {/* Social Icons */}
+            <div className="md:col-span-3 flex md:justify-end gap-3">
+              <Link href="#" className="w-10 h-10 bg-[#3e2723] rounded-full flex items-center justify-center text-[#F6F5F3] hover:bg-brand-orange transition-colors">
+                <Facebook size={20} />
+              </Link>
+              <Link href="#" className="w-10 h-10 bg-[#3e2723] rounded-full flex items-center justify-center text-[#F6F5F3] hover:bg-brand-orange transition-colors">
+                <Instagram size={20} />
+              </Link>
+              <Link href="#" className="w-10 h-10 bg-[#3e2723] rounded-full flex items-center justify-center text-[#F6F5F3] hover:bg-brand-orange transition-colors">
+                <Twitter size={20} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Mailing List */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 items-end border-t border-gray-300 pt-16">
+            <div className="lg:col-span-6">
+              <h3 className="text-2xl font-normal text-[#3e2723] mb-4">Join Our Mailing List</h3>
+              <p className="text-sm font-medium text-[#5d4037] mb-8">Stay updated with our latest news and updates delivered straight to your inbox.</p>
+              
+              <form className="space-y-4 max-w-lg">
+                <label className="block text-xs font-bold text-[#5d4037]">Email address *</label>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    className="flex-1 bg-transparent border-b-2 border-gray-400 py-3 text-[#3e2723] placeholder:text-gray-500 focus:outline-none focus:border-[#3e2723] transition-colors"
+                  />
+                  <Button type="button" className="bg-[#3e2723] hover:bg-brand-orange text-[#F6F5F3] rounded-none px-10 py-6 text-sm font-medium transition-colors w-full sm:w-auto">
+                    Join Now
+                  </Button>
+                </div>
+                <div className="flex items-start gap-2 pt-2">
+                  <input type="checkbox" id="marketing" className="mt-1 flex-shrink-0" />
+                  <label htmlFor="marketing" className="text-xs font-medium text-[#5d4037]">
+                    Yes, I agree to receive marketing emails. *
+                  </label>
+                </div>
+              </form>
+            </div>
+
+            <div className="lg:col-span-6 flex lg:justify-end text-xs font-medium text-[#5d4037]">
+              <p>© 2026 by 2Fix. Powered and secured by 2Fix Technologies</p>
+            </div>
+          </div>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }
