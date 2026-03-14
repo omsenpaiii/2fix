@@ -111,10 +111,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-20">
             {/* Logo area */}
             <div className="md:col-span-3">
-              <h2 className="text-5xl font-black tracking-tighter text-[#3e2723] mb-2 leading-none" style={{ fontFamily: "Impact, sans-serif" }}>
-                2Fix
-              </h2>
-              <p className="text-base font-medium text-[#5d4037]">Your Trusted Fix<br/>Every Time.</p>
+              <Link href="/">
+                <div className="relative h-20 w-36 mb-6">
+                  <Image 
+                    src="/logo.png" 
+                    alt="2Fix Logo" 
+                    fill 
+                    style={{ objectFit: 'contain', objectPosition: 'left' }}
+                  />
+                </div>
+              </Link>
+              <p className="text-xl font-bold text-[#5d4037]">Your Trusted Fix</p>
+              <p className="text-xl font-bold text-[#5d4037]">Every Time.</p>
             </div>
 
             {/* Links Columns */}

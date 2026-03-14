@@ -40,22 +40,19 @@ export default function ProductDetailPage({
   };
 
   return (
-    <div className="min-h-screen bg-brand-black text-white selection:bg-brand-orange pt-24 pb-32">
+    <div className="min-h-screen bg-white text-brand-black selection:bg-brand-orange pt-24 pb-32">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           
-          {/* Left Column - Product Image (Glowing/Glass Frame) */}
+          {/* Left Column - Product Image */}
           <div className="relative group">
-            {/* Ambient Background Glow */}
-            <div className="absolute inset-0 bg-brand-orange/20 blur-[100px] rounded-full mix-blend-screen pointer-events-none" />
-            
-            <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-white/5 border border-white/10 p-2 backdrop-blur-xl">
-              <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden bg-black/50">
+            <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-[#F5F5F5] border border-gray-200 p-2">
+              <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden bg-[#EAEAEA]">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
               </div>
@@ -68,22 +65,22 @@ export default function ProductDetailPage({
               <p className="text-brand-orange font-bold uppercase tracking-widest text-sm mb-4">
                 {product.category}
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter drop-shadow-lg mb-4 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter text-[#3e2723] mb-4 leading-tight" style={{ fontFamily: "Impact, sans-serif" }}>
                 {product.name}
               </h1>
-              <p className="text-4xl font-light tracking-wide">${product.price.toFixed(2)}</p>
+              <p className="text-4xl font-normal text-[#5d4037]">${product.price.toFixed(2)}</p>
             </div>
 
             <div className="space-y-6">
-              <p className="text-xl text-white/70 leading-relaxed font-light">
+              <p className="text-xl text-[#5d4037] leading-relaxed font-medium">
                 {product.description}
               </p>
 
               <div>
-                <h3 className="font-bold text-lg mb-3 uppercase tracking-wider">Features</h3>
+                <h3 className="font-bold text-lg mb-3 uppercase tracking-wider text-[#3e2723]">Features</h3>
                 <ul className="space-y-2">
                   {product.features?.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-white/80">
+                    <li key={idx} className="flex items-center text-[#5d4037] font-medium">
                       <div className="w-1.5 h-1.5 bg-brand-orange rounded-full mr-3" />
                       {feature}
                     </li>
@@ -93,18 +90,18 @@ export default function ProductDetailPage({
             </div>
 
             {/* Personalization Configurator */}
-            <div className="bg-white/5 border border-white/10 rounded-[2rem] p-8 space-y-6 backdrop-blur-lg">
+            <div className="bg-[#F6F5F3] border border-gray-200 rounded-[2rem] p-8 space-y-6">
               <div>
                 <label
                   htmlFor="personalization"
-                  className="block text-sm font-bold uppercase tracking-widest mb-3 text-white"
+                  className="block text-sm font-bold uppercase tracking-widest mb-3 text-[#3e2723]"
                 >
                   Personalization Details <span className="text-brand-orange">*</span>
                 </label>
                 <textarea
                   id="personalization"
                   rows={3}
-                  className="w-full bg-black/40 border border-white/20 rounded-xl p-4 text-white placeholder:text-white/30 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all resize-none font-light"
+                  className="w-full bg-white border border-gray-300 rounded-xl p-4 text-[#3e2723] placeholder:text-gray-400 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all resize-none font-medium"
                   placeholder="Enter name, date, or message..."
                   value={personalization}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setPersonalization(e.target.value)}
@@ -113,14 +110,14 @@ export default function ProductDetailPage({
 
               <div className="flex gap-4">
                 <div className="w-32">
-                  <label htmlFor="quantity" className="block text-sm font-bold uppercase tracking-widest mb-3 text-white">
+                  <label htmlFor="quantity" className="block text-sm font-bold uppercase tracking-widest mb-3 text-[#3e2723]">
                     Qty
                   </label>
                   <input
                     type="number"
                     id="quantity"
                     min="1"
-                    className="w-full h-16 bg-black/40 border-white/20 text-xl font-bold rounded-xl text-center focus:border-brand-orange border"
+                    className="w-full h-16 bg-white border-gray-300 text-[#3e2723] text-xl font-bold rounded-xl text-center focus:border-brand-orange border"
                     value={quantity}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuantity(Number(e.target.value) || 1)}
                   />
@@ -130,7 +127,7 @@ export default function ProductDetailPage({
                   <Button 
                     onClick={handleAddToCart} 
                     disabled={!personalization.trim()}
-                    className="w-full h-16 bg-brand-orange hover:bg-[#ff9c45] text-black font-black uppercase tracking-widest text-lg rounded-xl transition-all hover:scale-[1.02] shadow-[0_0_20px_rgba(255,133,27,0.3)] hover:shadow-[0_0_30px_rgba(255,133,27,0.6)] disabled:opacity-50 disabled:shadow-none disabled:hover:scale-100"
+                    className="w-full h-16 bg-[#3e2723] hover:bg-brand-orange text-[#F6F5F3] font-black uppercase tracking-widest text-lg rounded-xl transition-all hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100"
                   >
                     {personalization.trim() ? "Add to Cart" : "Enter Details to Add"}
                   </Button>

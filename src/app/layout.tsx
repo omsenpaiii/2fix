@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scrollbar-smooth dark">
-      <body className={`${font.className} min-h-screen flex flex-col bg-brand-black text-white`}>
+    <html lang="en" className="scrollbar-smooth">
+      <body className={`${font.className} min-h-screen flex flex-col bg-white text-brand-black`}>
         <Navbar />
         <main className="flex-1">
           {children}
