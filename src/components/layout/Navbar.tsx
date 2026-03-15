@@ -38,16 +38,22 @@ export function Navbar() {
               Shop All
             </Link>
             <Link
-              href="/shop?category=drinkware"
+              href="/#categories"
+              className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Categories
+            </Link>
+            <Link
+              href="/shop?category=Drinkware"
               className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Drinkware
             </Link>
             <Link
-              href="/shop?category=accessories"
+              href="/shop?category=Promotional"
               className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Accessories
+              Promotional
             </Link>
           </nav>
         </div>

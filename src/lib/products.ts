@@ -4,7 +4,7 @@ export const PRODUCTS = [
     name: "Executive Leather Wallet Set",
     price: 85.0,
     image: "/products/File 1.jpeg",
-    category: "Accessories",
+    category: "Gift sets",
     description: "The ultimate corporate or personal gift. A genuine leather wallet, matching keychain, and smooth-writing ballpoint pen, all beautifully presented and personalized to your specifications.",
     features: ["Genuine Leather Wallet", "Matching personalized keychain", "Premium smooth ink pen"],
   },
@@ -13,7 +13,7 @@ export const PRODUCTS = [
     name: "Classic Pen & Keychain Set",
     price: 45.0,
     image: "/products/File 2.jpeg",
-    category: "Accessories",
+    category: "Gift sets",
     description: "A timeless combo for professionals. Includes an engraved faux-leather keychain and a matching premium silver and black pen. Perfect for work anniversaries and corporate milestones.",
     features: ["Textured leather keychain", "Smooth writing executive pen", "Elegant display box"],
   },
@@ -22,7 +22,7 @@ export const PRODUCTS = [
     name: "Classic Wooden Wine Accessory Set",
     price: 55.0,
     image: "/products/File 3.jpeg",
-    category: "Drinkware",
+    category: "Barware",
     description: "Elegant wooden-handled corkscrew and a beautifully matching wood-top bottle stopper. The perfect addition to any wine lover's collection.",
     features: ["Wood finish accents", "Stainless steel corkscrew", "Premium tan gift box"],
   },
@@ -31,7 +31,7 @@ export const PRODUCTS = [
     name: "Matte Black Wine Toolkit",
     price: 65.0,
     image: "/products/File 4.jpeg",
-    category: "Drinkware",
+    category: "Barware",
     description: "A sleek, moody matte black wine accessory set. Includes a heavy-duty corkscrew, a modern bottle stopper, and foil cutter. Ideal for weddings and groomsmen.",
     features: ["Matte black finish", "Complete wine toolkit", "Luxury unboxing experience"],
   },
@@ -40,7 +40,7 @@ export const PRODUCTS = [
     name: "Premium Wooden Corkscrew & Stopper",
     price: 50.0,
     image: "/products/File 5.jpeg",
-    category: "Drinkware",
+    category: "Barware",
     description: "A beautifully crafted wooden corkscrew and matching bottle stopper set, presented in an elegant tan box. Ready for deep laser engraving.",
     features: ["Ergonomic wooden handle", "Durable stainless steel", "Perfect for wine enthusiasts"],
   },
@@ -49,7 +49,7 @@ export const PRODUCTS = [
     name: "Executive Black Cardholder Set",
     price: 75.0,
     image: "/products/File 6.jpeg",
-    category: "Accessories",
+    category: "Promotional",
     description: "A sophisticated matching black cardholder, sleek keychain, and executive pen set. Elevate your professional everyday carry with personalized touches.",
     features: ["Textured black finish", "Metal-accented card holder", "Professional aesthetics"],
   },
@@ -58,7 +58,7 @@ export const PRODUCTS = [
     name: "Engraved Leather Pen Pouch",
     price: 35.0,
     image: "/products/File 7.jpeg",
-    category: "Accessories",
+    category: "Pen sets",
     description: "A beautiful brown faux-leather pen pouch with a premium silver pen. Customize the pouch with initials or a corporate logo for a memorable gift.",
     features: ["Custom engraving on pouch", "Premium silver pen included", "Elegant & highly portable"],
   },
@@ -67,8 +67,42 @@ export const PRODUCTS = [
     name: "Custom Corporate Gifting Bundle",
     price: 250.0,
     image: "/products/File 8.jpeg",
-    category: "Accessories",
+    category: "Promotional",
     description: "Explore our full range of personalized giftware. From engraved flasks and mugs to executive leather sets, we have everything you need for high-voltage customization.",
     features: ["Mix and match products", "Bulk corporate discounts", "Deep laser engraving"],
   }
 ];
+
+export const CATEGORIES = [
+  {
+    name: "Gift sets",
+    image: "/categories/gift_sets.png",
+    link: "/shop?category=Gift sets"
+  },
+  {
+    name: "Drinkware",
+    image: "/categories/drinkware.png",
+    link: "/shop?category=Drinkware"
+  },
+  {
+    name: "Barware",
+    image: "/categories/barware.png",
+    link: "/shop?category=Barware"
+  },
+  {
+    name: "Pen sets",
+    image: "/categories/pen_sets.png",
+    link: "/shop?category=Pen sets"
+  },
+  {
+    name: "Wine boxes",
+    image: "/categories/wine_boxes.png",
+    link: "/shop?category=Wine boxes"
+  },
+  {
+    name: "Promotional",
+    image: "/categories/promotional.png",
+    link: "/shop?category=Promotional"
+  }
+];
+

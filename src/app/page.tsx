@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { PRODUCTS } from "@/lib/products";
+import { PRODUCTS, CATEGORIES } from "@/lib/products";
 import { Facebook, Instagram, Twitter, MoveRight } from "lucide-react";
 
 // Function to get the first 4 products for showcase
@@ -69,9 +69,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products - Clean Grid */}
-      <section className="py-24 bg-white">
+      {/* Popular Product Categories Section */}
+      <section id="categories" className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-[1400px]">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-black text-brand-black mb-4 tracking-tight" style={{ fontFamily: "Impact, sans-serif" }}>
+              Popular Product Categories
+            </h2>
+            <p className="text-xl text-gray-500 font-medium">
+              Explore our curated collections to find the perfect personalized gift.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {CATEGORIES.map((category) => (
+              <Link href={category.link} key={category.name} className="group">
+                <div className="relative aspect-square bg-[#F5F5F5] rounded-[2.5rem] overflow-hidden flex flex-col items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
+                  <div className="relative w-full h-[70%] transition-transform duration-500 group-hover:scale-110">
+                    <Image 
+                      src={category.image} 
+                      alt={category.name} 
+                      fill 
+                      className="object-contain"
+                    />
+                  </div>
+                  <h3 className="mt-8 text-xl font-black uppercase tracking-wider text-brand-black">
+                    {category.name}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products - Clean Grid */}
+      <section className="py-24 bg-[#F9F9F9]">
+        <div className="container mx-auto px-6 max-w-[1400px]">
+          <div className="text-center mb-16">
+             <h2 className="text-4xl font-black text-brand-black uppercase tracking-tighter" style={{ fontFamily: "Impact, sans-serif" }}>
+              Featured Collection
+            </h2>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
             {featuredProducts.map((product) => (
               <Link href={`/product/${product.id}`} key={product.id} className="group flex flex-col items-center text-center">

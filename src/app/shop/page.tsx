@@ -18,21 +18,33 @@ export default function ShopPage({
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-200 pb-12 mb-20">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase text-[#3e2723]" style={{ fontFamily: "Impact, sans-serif" }}>
-              {categoryFilter ? `${categoryFilter} Gifts` : "All Gifts"}
+              {categoryFilter ? categoryFilter : "All Gifts"}
             </h1>
             <p className="text-xl text-[#5d4037] font-medium">
               Browse our curated selection.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <Link href="/shop" className={`px-8 py-3 rounded-full text-sm font-bold border-2 transition-all ${!categoryFilter ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
+            <Link href="/shop" className={`px-6 py-2 rounded-full text-xs font-bold border-2 transition-all ${!categoryFilter ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
               All
             </Link>
-            <Link href="/shop?category=drinkware" className={`px-8 py-3 rounded-full text-sm font-bold border-2 transition-all ${categoryFilter === 'drinkware' ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
+            <Link href="/shop?category=Gift sets" className={`px-6 py-2 rounded-full text-xs font-bold border-2 transition-all ${categoryFilter === 'gift sets' ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
+              Gift sets
+            </Link>
+            <Link href="/shop?category=Drinkware" className={`px-6 py-2 rounded-full text-xs font-bold border-2 transition-all ${categoryFilter === 'drinkware' ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
               Drinkware
             </Link>
-            <Link href="/shop?category=accessories" className={`px-8 py-3 rounded-full text-sm font-bold border-2 transition-all ${categoryFilter === 'accessories' ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
-              Accessories
+            <Link href="/shop?category=Barware" className={`px-6 py-2 rounded-full text-xs font-bold border-2 transition-all ${categoryFilter === 'barware' ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
+              Barware
+            </Link>
+            <Link href="/shop?category=Pen sets" className={`px-6 py-2 rounded-full text-xs font-bold border-2 transition-all ${categoryFilter === 'pen sets' ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
+              Pen sets
+            </Link>
+            <Link href="/shop?category=Wine boxes" className={`px-6 py-2 rounded-full text-xs font-bold border-2 transition-all ${categoryFilter === 'wine boxes' ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
+              Wine boxes
+            </Link>
+            <Link href="/shop?category=Promotional" className={`px-6 py-2 rounded-full text-xs font-bold border-2 transition-all ${categoryFilter === 'promotional' ? "border-brand-orange bg-brand-orange text-[#F6F5F3]" : "border-gray-300 bg-transparent text-[#3e2723] hover:border-[#3e2723]"}`}>
+              Promotional
             </Link>
           </div>
         </div>
