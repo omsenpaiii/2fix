@@ -70,6 +70,39 @@ export const PRODUCTS = [
     category: "Promotional",
     description: "Explore our full range of personalized giftware. From engraved flasks and mugs to executive leather sets, we have everything you need for high-voltage customization.",
     features: ["Mix and match products", "Bulk corporate discounts", "Deep laser engraving"],
+  },
+  {
+    id: "p9",
+    name: "Wine Tumbler White",
+    price: 25.0,
+    image: "/products/FIle 9.jpg",
+    category: "Drinkware",
+    description: "Stainless steel insulated wine tumblers for your hot or cold beverage. Perfect while travelling or in the outdoors. Powder coated for extra durability and includes handy sliding lid. Not recommended for dishwashers.",
+    features: [
+      "Product Code: LSW105",
+      "Size: 350ml",
+      "Colour: White",
+      "Material: Stainless Steel",
+      "Thickness: Double Wall",
+      "Lid Diameter: 80mm",
+      "Width: 85mm, Height: 115mm"
+    ]
+  },
+  {
+    id: "p10",
+    name: "Value Sports Bottle",
+    price: 20.0,
+    image: "/products/File 10.jpg",
+    category: "Drinkware",
+    description: "Laserable sports bottle offers a nice award or gift option for your team or organisation. Lasers silver. Not recommended for dishwashers. This item provides great value and an elegant design with matte finish.",
+    features: [
+      "Product Code: LWB307",
+      "Size: 750ml",
+      "Colour: Black",
+      "Material: Stainless Steel",
+      "Weight: 160g",
+      "Width: 75mm, Height: 220mm"
+    ]
   }
 ];
 
