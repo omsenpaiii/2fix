@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { PRODUCTS } from "@/lib/products";
+import { useProductStore } from "@/lib/productStore";
 import { useCartStore } from "@/lib/store";
 
 export default function ProductDetailPage({
@@ -14,9 +14,10 @@ export default function ProductDetailPage({
 }) {
   const [personalization, setPersonalization] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const { products } = useProductStore();
   const addItem = useCartStore((state) => state.addItem);
 
-  const product = PRODUCTS.find((p) => p.id === params.id);
+  const product = products.find((p) => p.id === params.id);
 
   if (!product) {
     notFound();

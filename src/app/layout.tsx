@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 
 const font = Outfit({ subsets: ["latin"] });
 
@@ -19,11 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scrollbar-smooth">
       <body className={`${font.className} min-h-screen flex flex-col bg-white text-brand-black`}>
-        <Navbar />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );

@@ -1,16 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { PRODUCTS } from "@/lib/products";
+import { useSearchParams } from "next/navigation";
+import { useProductStore } from "@/lib/productStore";
+import { Suspense } from "react";
 
-export default function ShopPage({
-  searchParams,
-}: {
-  searchParams: { category?: string };
-}) {
-  const categoryFilter = searchParams.category?.toLowerCase();
-  const displayedProducts = categoryFilter 
-    ? PRODUCTS.filter(p => p.category.toLowerCase() === categoryFilter)
-    : PRODUCTS;
+function ShopContent() {
+  const searchParams = useSearchParams();
+  const categoryFilter = searchParams.get("category")?.toLowerCase();
+  const { products } = useProductStore();
+
+  const displayedProducts = categoryFilter
+    ? products.filter((p) => p.category.toLowerCase() === categoryFilter)
+    : products;
 
   return (
     <div className="min-h-screen bg-white text-brand-black selection:bg-brand-orange pt-16 pb-32 relative overflow-hidden">
@@ -82,5 +85,17 @@ export default function ShopPage({
         )}
       </div>
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-brand-orange/30 border-t-brand-orange rounded-full animate-spin" />
+      </div>
+    }>
+      <ShopContent />
+    </Suspense>
   );
 }
